@@ -1,4 +1,4 @@
-#Omer Shemsheyan 313450272, Omri Kodzidlo 301672630, Idan Yaniv 200792422, Max German 310797691
+
 """
 Django settings for chatapp project.
 
