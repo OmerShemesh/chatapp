@@ -1,0 +1,35 @@
+
+<html>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'watsapp/style.css' %}" />
+
+<head>
+    <title>
+        {% block title %} Watsapp {% endblock %}
+    </title>
+</head>
+
+<body>
+
+<div id="header">
+    {% block header %}
+
+    {% endblock %}
+</div>
+<div id="content">
+    {% block content %}
+
+    {% endblock %}
+</div>
+<div id="footer">
+    {% block footer %}
+        {%if user.is_authenticated%}
+             <br>
+          <a href="{% url "django.contrib.auth.views.logout"%}?next=/watsapp">Log out</a>
+
+        {%endif%}
+    {% endblock %}
+</div>
+
+</body>
+</html>

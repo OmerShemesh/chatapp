@@ -1,0 +1,34 @@
+
+{% extends "watsapp\base.html" %}
+{% block title %} {{ block.super }}Messages{% endblock %}
+{% block content %}
+    <p>Messages:</p>
+     {% if messages_list %}
+         <ul style="height:400px;width:400px;overflow: scroll;">
+            {% for message in messages_list %}
+                <br>
+                <li><textarea readonly>{{message}}</textarea></li>
+            {% endfor %}
+        </ul>
+     {% else %}
+        <p>No Messages found </p>
+     {% endif %}
+    <br>
+    <br>
+
+    {% if user.is_authenticated %}
+        <h2><u>Send a new Message to {{ receiver }}</u>:</h2>
+        <form method="POST">
+             {% csrf_token %}
+             {{ form.as_p}}
+            <button type="submit">Send Message</button>
+        </form>
+
+
+
+    {%else %}
+        <p>Please Log in in order to send a message!</p>
+    {% endif %}
+    <br>
+    <a href="/watsapp/">Back To Main Page</a>
+{% endblock %}

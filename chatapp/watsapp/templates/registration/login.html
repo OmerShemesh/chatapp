@@ -1,0 +1,12 @@
+
+{% extends "watsapp\base.html" %}
+{% block title %} {{ block.super }} Login{% endblock %}
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Login" />
+    </form>
+    <p>Not Registered? <a href="/watsapp/register">Register</a></p>
+{% endblock %}
