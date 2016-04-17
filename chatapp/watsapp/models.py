@@ -8,4 +8,4 @@ class Message(models.Model):
     sender = models.ForeignKey(User,related_name='sender')
     receiver = models.ForeignKey(User,related_name='receiver')
     def __str__(self):
-        return ("Message From {} to {}\nDate: {}\nThe Message Content:\n{}".format(self.sender,self.receiver,self.pub_date,self.message_text))
+        return ("Message From {} to {}\nDate: {}\nThe Message Contents:\n{}".format(self.sender,self.receiver,self.pub_date,self.message_text))
